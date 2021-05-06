@@ -5,7 +5,7 @@ WORKDIR $GOPATH/src/github.com/micheltank/challenge
 COPY . $GOPATH/src/github.com/micheltank/challenge
 RUN go build
 
-FROM busybox:stable-musl
+FROM scratch
 
 ENV GOPATH="$HOME/go"
 WORKDIR /app
