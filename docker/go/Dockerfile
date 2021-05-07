@@ -3,7 +3,7 @@ FROM golang:1.15.5-alpine AS builder
 ENV GOPATH="$HOME/go"
 WORKDIR $GOPATH/src/github.com/micheltank/challenge
 COPY . $GOPATH/src/github.com/micheltank/challenge
-RUN go build
+RUN go build -ldflags "-s -w"
 
 FROM scratch
 
